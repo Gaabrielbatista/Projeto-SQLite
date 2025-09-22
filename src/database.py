@@ -29,3 +29,21 @@ def listar_tabelas():
     conn.close()
 
     return resultado
+
+def inserir_carro(modelo, ano, cor):
+    conn = criar_conexao()
+    cur = conn.cursor()
+
+    cur.execute("INSERT INTO carros (modelo, ano, cor) VALUES (?, ?, ?)", (modelo, ano, cor))
+
+    conn.commit()
+    conn.close()
+
+def listar_carros():
+    conn = criar_conexao()
+    cur = conn.cursor()
+
+    cur.execute("SELECT * FROM carros")
+    resultado = cur.fetchall()
+    conn.close()
+    return resultado
