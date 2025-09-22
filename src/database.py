@@ -45,5 +45,21 @@ def listar_carros():
 
     cur.execute("SELECT * FROM carros")
     resultado = cur.fetchall()
+
     conn.close()
+
     return resultado
+
+def atualizar_carro(id, modelo=None, ano=None, cor=None):
+    conn = criar_conexao()
+    cur = conn.cursor()
+
+    if modelo is not None:
+        cur.execute("UPDATE carros SET modelo = ? WHERE id_carro = ?", (modelo, id))
+    if ano is not None:
+        cur.execute("UPDATE carros SET ano = ? WHERE id_carro = ?", (ano, id))
+    if cor is not None:
+        cur.execute("UPDATE carros SET cor = ? WHERE id_carro = ?", (cor, id))
+
+    conn.commit()
+    conn.close()
