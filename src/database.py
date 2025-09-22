@@ -18,3 +18,14 @@ def criar_tabela():
     
     conn.commit()
     conn.close()
+
+def listar_tabelas():
+    conn = criar_conexao()
+    cur = conn.cursor()
+
+    cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
+
+    resultado = cur.fetchall()
+    conn.close()
+
+    return resultado
