@@ -1,10 +1,26 @@
 # Aprendendo Banco de Dados com Python e SQLite
 
-## O que aprendi:
+## O que estou aprendendo:
 - Conexões com banco de dados
 - Criação de tabelas com constraints
 - Operações CRUD básicas
 - Boas práticas com SQLite
 
-## Como usar:
-[instruções aqui]
+## 📋 Status do Projeto
+
+### ✅ Implementado:
+- [x] Conexão com banco SQLite
+- [x] Criação de tabelas com constraints
+- [x] CREATE: Inserir carros
+- [x] READ: Listar carros com visualização tabular
+- [x] UPDATE: Atualizar dados dos carros
+
+### 🔄 Em Desenvolvimento:
+- [ ] DELETE: Remover carros
+- [ ] Validação de entrada de dados
+- [ ] Interface de menu interativo
+
+### 🔮 Próximas Features:
+- [ ] Busca por filtros específicos
+- [ ] Relatórios e estatísticas
+- [ ] Export para CSV
