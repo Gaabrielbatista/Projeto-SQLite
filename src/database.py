@@ -1,4 +1,20 @@
 import sqlite3
 
 def criar_conexao():
-    coluna = sqlite3.connect("")
+    conn = sqlite3.connect("carros.db")
+    return conn
+
+def criar_tabela():
+    conn = criar_conexao()
+    cur = conn.cursor()
+    
+    cur.execute(
+    '''CREATE TABLE IF NOT EXISTS carros (
+    id_carro INTEGER PRIMARY KEY AUTOINCREMENT,
+    modelo VARCHAR(50) NOT NULL,
+    ano INTEGER NOT NULL CHECK (ano >= 1900 AND ano < 2030),
+    cor VARCHAR(30)
+    );''')
+    
+    conn.commit()
+    conn.close()
