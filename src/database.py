@@ -1,3 +1,4 @@
+from cmath import nan
 import sqlite3
 
 def criar_conexao():
@@ -9,7 +10,7 @@ def criar_tabela():
     cur = conn.cursor()
     
     cur.execute(
-    '''CREATE TABLE IF NOT EXISTS carros (
+    '''CREATE TABLE IF NOT EXISTS Carros (
     id_carro INTEGER PRIMARY KEY AUTOINCREMENT,
     modelo VARCHAR(50) NOT NULL,
     ano INTEGER NOT NULL CHECK (ano >= 1900 AND ano < 2030),
@@ -63,3 +64,4 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
 
     conn.commit()
     conn.close()
+    
