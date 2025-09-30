@@ -1,4 +1,3 @@
-from cmath import nan
 import sqlite3
 
 def criar_conexao():
