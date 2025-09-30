@@ -36,7 +36,7 @@ def inserir_carro(modelo, ano, cor):
     conn = criar_conexao()
     cur = conn.cursor()
 
-    cur.execute("INSERT INTO carros (modelo, ano, cor) VALUES (?, ?, ?)", (modelo, ano, cor))
+    cur.execute("INSERT INTO Carros (modelo, ano, cor) VALUES (?, ?, ?)", (modelo, ano, cor))
 
     conn.commit()
     conn.close()
@@ -46,7 +46,7 @@ def listar_carros():
     conn = criar_conexao()
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM carros")
+    cur.execute("SELECT * FROM Carros")
     resultado = cur.fetchall()
 
     conn.close()
@@ -59,13 +59,23 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
     cur = conn.cursor()
 
     if modelo is not None:
-        cur.execute("UPDATE carros SET modelo = ? WHERE id_carro = ?", (modelo, id))
+        cur.execute("UPDATE Carros SET modelo = ? WHERE id_carro = ?", (modelo, id))
     if ano is not None:
-        cur.execute("UPDATE carros SET ano = ? WHERE id_carro = ?", (ano, id))
+        cur.execute("UPDATE Carros SET ano = ? WHERE id_carro = ?", (ano, id))
     if cor is not None:
-        cur.execute("UPDATE carros SET cor = ? WHERE id_carro = ?", (cor, id))
+        cur.execute("UPDATE Carros SET cor = ? WHERE id_carro = ?", (cor, id))
 
     conn.commit()
     conn.close()
 
 # DELETE
+def deletar_carro(id):
+    conn = criar_conexao()
+    cur = conn.cursor()
+
+    cur.execute("DELETE FROM Carros WHERE id_carro = ?", (id, ))
+
+    print(f"Carro na id: {id} deletado.")
+
+    conn.commit()
+    conn.close()
