@@ -11,8 +11,9 @@ def exibir_dados():
 
 # Pausa para visualização
 def pausar():
-    input("Pressione Enter... ")
+    input("\nPressione Enter para continuar...\n ")
 
+# Cria tabela
 criar_tabela()
 
 # Adiciona 10 Carros
