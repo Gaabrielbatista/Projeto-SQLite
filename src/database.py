@@ -31,6 +31,7 @@ def listar_tabelas():
 
     return resultado
 
+# CREATE
 def inserir_carro(modelo, ano, cor):
     conn = criar_conexao()
     cur = conn.cursor()
@@ -40,6 +41,7 @@ def inserir_carro(modelo, ano, cor):
     conn.commit()
     conn.close()
 
+# READ
 def listar_carros():
     conn = criar_conexao()
     cur = conn.cursor()
@@ -51,6 +53,7 @@ def listar_carros():
 
     return resultado
 
+# UPDATE
 def atualizar_carro(id, modelo=None, ano=None, cor=None):
     conn = criar_conexao()
     cur = conn.cursor()
@@ -64,4 +67,5 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
 
     conn.commit()
     conn.close()
-    
+
+# DELETE
