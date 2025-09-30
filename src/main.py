@@ -4,17 +4,18 @@ from os import system
 
 system("cls")
 
-# Mostrar tabela
+# Mostra tabela
 def exibir_dados():
     exibição = (tabulate(listar_carros(), tablefmt='fancy_grid', headers=['ID', 'Modelo', 'Ano', 'Cor']))
     print(exibição)
 
-# Pausar para visualização
+# Pausa para visualização
 def pausar():
     input("Pressione Enter... ")
 
 criar_tabela()
 
+# Adiciona 10 Carros
 inserir_carro('Fiat Uno', 2010, 'Prata'),
 inserir_carro('Chevrolet Onix', 2022, 'Preto'),
 inserir_carro('Volkswagen Gol', 2015, 'Branco'),
@@ -29,8 +30,18 @@ exibir_dados()
 
 pausar()
 
+# Atualiza 4 carros
 atualizar_carro(1, modelo="Toyota Corolla")
-atualizar_carro(2, cor="Azul")
-atualizar_carro(3, ano="2023")
-atualizar_carro(4, cor= "Prata", ano=2020, modelo="Honda Civic")
+atualizar_carro(2, ano=2023)
+atualizar_carro(3, cor="Azul")
+atualizar_carro(4, cor="Prata", ano=2020, modelo="Honda Civic")
+exibir_dados()
+
+pausar()
+
+# Deleta 4 carros
+deletar_carro(10)
+deletar_carro(9)
+deletar_carro(8)
+deletar_carro(7)
 exibir_dados()
