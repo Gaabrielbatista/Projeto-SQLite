@@ -32,15 +32,21 @@ def listar_tabelas():
 
 # CREATE
 def inserir_carro(modelo, ano, cor=None):
+    # Verificação str
+    if not isinstance(modelo, str):
+        raise Exception("Erro: Modelo deve ser do tipo string.")
+    if not isinstance(cor, str):
+        raise Exception("Erro: Cor deve ser do tipo string.")
+    
+    # Validações
     modelo = modelo.strip()
 
-    # Validações
     if not modelo:
-        raise Exception("Erro: Modelo não pode estar vazio")
+        raise Exception("Erro: Modelo não pode estar vazio.")
     if type(ano) is not int:
-        raise Exception("Erro: O ano precisa ser do tipo inteiro")
+        raise Exception("Erro: O ano precisa ser do tipo inteiro.")
     if 1900 > ano or ano > 2030:
-        raise Exception("Erro: O ano precisa estar entre 1900 e 2030")
+        raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
 
     conn = criar_conexao()
     cur = conn.cursor()
