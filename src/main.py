@@ -17,7 +17,7 @@ def pausar():
 criar_tabela()
 
 # Adiciona 10 Carros
-inserir_carro('Fiat Uno', 2010, 'Prata'),
+inserir_carro('fiat Uno', 2010, 'Prata'),
 inserir_carro('Chevrolet Onix', 2022, 'Preto'),
 inserir_carro('Volkswagen Gol', 2015, 'Branco'),
 inserir_carro('Hyundai HB20', 2020, 'Branco'),

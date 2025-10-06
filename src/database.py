@@ -40,7 +40,8 @@ def inserir_carro(modelo, ano, cor=None):
             raise Exception("Erro: Cor deve ser do tipo string.")
     
     # Validações
-    modelo = modelo.strip()
+    modelo = modelo.strip().capitalize()
+    cor = (cor.strip().capitalize() if type(cor) == str else None)
 
     if not modelo:
         raise Exception("Erro: Modelo não pode estar vazio.")
