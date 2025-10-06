@@ -12,7 +12,7 @@ def criar_tabela():
     '''CREATE TABLE IF NOT EXISTS Carros (
     id_carro INTEGER PRIMARY KEY AUTOINCREMENT,
     modelo VARCHAR(50) NOT NULL,
-    ano INTEGER NOT NULL CHECK (ano >= 1900 AND ano < 2030),
+    ano INTEGER NOT NULL CHECK (ano >= 1900 AND ano <= 2030),
     cor VARCHAR(30)
     );''')
     
@@ -32,6 +32,18 @@ def listar_tabelas():
 
 # CREATE
 def inserir_carro(modelo, ano, cor):
+    modelo = modelo.strip(" ")
+    cor = cor.strip(" ")
+
+    if not modelo:
+        raise Exception("Erro: Modelo não pode estar vazio")
+    if type(ano) != int:
+        raise Exception("Erro: O ano precisa ser do tipo inteiro")
+    if 1900 > ano or ano > 2030:
+        raise Exception("Erro: O ano precisa estar entre 1900 e 2030")
+    if not cor:
+        raise Exception("Erro: Cor não pode estar vazio")
+
     conn = criar_conexao()
     cur = conn.cursor()
 

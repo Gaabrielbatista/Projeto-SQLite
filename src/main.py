@@ -45,4 +45,5 @@ deletar_carro(10)
 deletar_carro(9)
 deletar_carro(8)
 deletar_carro(7)
+
 exibir_dados()
