@@ -1,8 +1,13 @@
 from database import *
-from main import exibir_dados
-from os import system
+from utils import pausar
+from tabulate import tabulate
 
-system("cls")
+# Mostra tabela
+def exibir_dados():
+    exibição = (tabulate(listar_carros(), tablefmt='fancy_grid', headers=['ID', 'Modelo', 'Ano', 'Cor']))
+    print(exibição)
+
+pausar()
 
 # Mostra tabela
 exibir_dados()
@@ -11,13 +16,13 @@ exibir_dados()
 def pausar():
     input("\nPressione Enter para continuar...\n ")
 
-if __name__ == "__main__":
-    # Cria tabela
-    criar_tabela()
 
-    inserir_carro("carro_teste", 2024, "")
+# Cria tabela
+criar_tabela()
 
-    exibir_dados()
-    pausar()
+inserir_carro("carro_teste", 2024, "")
 
-    atualizar_carro(1, modelo="outro aí")
+exibir_dados()
+pausar()
+
+atualizar_carro(1, modelo="outro aí")
