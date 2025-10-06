@@ -49,6 +49,7 @@ def inserir_carro(modelo, ano, cor=None):
     if 1900 > ano or ano > 2030:
         raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
 
+    # Inserção
     conn = criar_conexao()
     cur = conn.cursor()
 
