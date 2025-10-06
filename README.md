@@ -14,9 +14,9 @@
 - [x] CREATE: Inserir carros
 - [x] READ: Listar carros com visualização tabular
 - [x] UPDATE: Atualizar dados dos carros
-
-### 🔄 Em Desenvolvimento:
 - [x] DELETE: Remover carros
+      
+### 🔄 Em Desenvolvimento:
 - [ ] Validação de entrada de dados
 - [ ] Interface de menu interativo
 
