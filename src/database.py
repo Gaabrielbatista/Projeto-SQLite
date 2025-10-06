@@ -35,8 +35,9 @@ def inserir_carro(modelo, ano, cor=None):
     # Verificação str
     if not isinstance(modelo, str):
         raise Exception("Erro: Modelo deve ser do tipo string.")
-    if not isinstance(cor, str):
-        raise Exception("Erro: Cor deve ser do tipo string.")
+    if cor is not None:
+        if not isinstance(cor, str):
+            raise Exception("Erro: Cor deve ser do tipo string.")
     
     # Validações
     modelo = modelo.strip()
