@@ -16,6 +16,6 @@ def pausar():
 # Cria tabela
 criar_tabela()
 
-inserir_carro(' a', 1901, "    asdfsda")
+inserir_carro(54, 2023, 3)
 
 exibir_dados()

@@ -31,18 +31,16 @@ def listar_tabelas():
     return resultado
 
 # CREATE
-def inserir_carro(modelo, ano, cor):
-    modelo = modelo.strip(" ")
-    cor = cor.strip(" ")
+def inserir_carro(modelo, ano, cor=None):
+    modelo = modelo.strip()
 
+    # Validações
     if not modelo:
         raise Exception("Erro: Modelo não pode estar vazio")
-    if type(ano) != int:
+    if type(ano) is not int:
         raise Exception("Erro: O ano precisa ser do tipo inteiro")
     if 1900 > ano or ano > 2030:
         raise Exception("Erro: O ano precisa estar entre 1900 e 2030")
-    if not cor:
-        raise Exception("Erro: Cor não pode estar vazio")
 
     conn = criar_conexao()
     cur = conn.cursor()
