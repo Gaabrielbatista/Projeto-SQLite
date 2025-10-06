@@ -23,7 +23,7 @@ def validar_dados_carro(modelo=None, ano=None, cor=None):
             raise Exception("Erro: Cor deve ser do tipo string.")
         
     # Validações
-    modelo = modelo.strip().capitalize()
+    modelo = (modelo.strip().capitalize() if type(modelo) == str else None)
     cor = (cor.strip().capitalize() if type(cor) == str else None)
 
     if not modelo:
@@ -32,3 +32,4 @@ def validar_dados_carro(modelo=None, ano=None, cor=None):
         raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
     
     return (modelo, ano, cor)
+    
