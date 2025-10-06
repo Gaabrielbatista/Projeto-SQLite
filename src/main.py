@@ -40,10 +40,10 @@ exibir_dados()
 
 pausar()
 
-# Deleta 4 carros
-deletar_carro(10)
-deletar_carro(9)
-deletar_carro(8)
+# Deleta 4 carros por id
 deletar_carro(7)
+deletar_carro(8)
+deletar_carro(9)
+deletar_carro(10)
 
 exibir_dados()
