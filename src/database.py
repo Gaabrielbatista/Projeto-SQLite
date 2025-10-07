@@ -1,5 +1,5 @@
 import sqlite3
-from utils import validar_dados_carro
+from utils import validar_dados_carro, verificar_id_existe
 
 def criar_conexao():
     conn = sqlite3.connect("carros.db")
@@ -62,9 +62,8 @@ def listar_carros():
 
 # UPDATE
 def atualizar_carro(id, modelo=None, ano=None, cor=None):
-    if type(id) is not int:
-        raise Exception("Erro: Id não pode estar vazia")
-    
+    verificar_id_existe(id)
+
     modelo_carro, ano_carro, cor_carro = validar_dados_carro(modelo, ano, cor)
     conn = criar_conexao()
     cur = conn.cursor()
@@ -81,14 +80,14 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
 
 # DELETE
 def deletar_carro(id):
-    if type(id) is not int:
-        raise Exception("Erro: Id não pode estar vazia")
+    verificar_id_existe(id)
+
     conn = criar_conexao()
     cur = conn.cursor()
 
     cur.execute("DELETE FROM Carros WHERE id_carro = ?", (id, ))
 
-    print(f"Carro na id: {id} deletado.")
+    print(f"Carro no id: {id} deletado.")
 
     conn.commit()
     conn.close()
