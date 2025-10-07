@@ -1,5 +1,5 @@
 import os
-from database import *
+import sqlite3
 # Funções para main
 
 def limpar_terminal():
