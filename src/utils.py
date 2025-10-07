@@ -26,10 +26,9 @@ def validar_dados_carro(modelo=None, ano=None, cor=None):
     modelo = (modelo.strip().capitalize() if type(modelo) == str else None)
     cor = (cor.strip().capitalize() if type(cor) == str else None)
 
-    if not modelo:
-        raise Exception("Erro: Modelo não pode estar vazio.")
-    if 1900 > ano or ano > 2030:
-        raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
+    if ano is not None:
+        if (1900 > ano or ano > 2030):
+            raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
     
     return (modelo, ano, cor)
     

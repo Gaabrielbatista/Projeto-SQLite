@@ -36,6 +36,9 @@ def inserir_carro(modelo, ano, cor=None):
     # Validação
     dados_carro = validar_dados_carro(modelo, ano, cor)
 
+    if not modelo:
+        raise Exception("Erro: Modelo não pode estar vazio.")
+    
     # Inserção
     conn = criar_conexao()
     cur = conn.cursor()
@@ -59,23 +62,27 @@ def listar_carros():
 
 # UPDATE
 def atualizar_carro(id, modelo=None, ano=None, cor=None):
-
-    dados_carro = validar_dados_carro(id, modelo, ano, cor)
+    if type(id) is not int:
+        raise Exception("Erro: Id não pode estar vazia")
+    
+    modelo_carro, ano_carro, cor_carro = validar_dados_carro(modelo, ano, cor)
     conn = criar_conexao()
     cur = conn.cursor()
 
-    if modelo is not None:
-        cur.execute("UPDATE Carros SET modelo = ? WHERE id_carro = ?", (modelo, id))
-    if ano is not None:
-        cur.execute("UPDATE Carros SET ano = ? WHERE id_carro = ?", (ano, id))
-    if cor is not None:
-        cur.execute("UPDATE Carros SET cor = ? WHERE id_carro = ?", (cor, id))
+    if modelo_carro is not None:
+        cur.execute("UPDATE Carros SET modelo = ? WHERE id_carro = ?", (modelo_carro, id))
+    if ano_carro is not None:
+        cur.execute("UPDATE Carros SET ano = ? WHERE id_carro = ?", (ano_carro, id))
+    if cor_carro is not None:
+        cur.execute("UPDATE Carros SET cor = ? WHERE id_carro = ?", (cor_carro, id))
 
     conn.commit()
     conn.close()
 
 # DELETE
 def deletar_carro(id):
+    if type(id) is not int:
+        raise Exception("Erro: Id não pode estar vazia")
     conn = criar_conexao()
     cur = conn.cursor()
 
