@@ -1,14 +1,16 @@
 import os
-from tabulate import tabulate
-
+from database import *
 # Funções para main
+
 def limpar_terminal():
     os.system("cls" if os.name == "nt" else "clear")
+
 # Pausa para visualização
 def pausar():
     input("\nPressione Enter para continuar...\n ")
 
 # Funções para database
+
 # Valida os dados do carro
 def validar_dados_carro(modelo=None, ano=None, cor=None):
     # Verificação str e int
@@ -31,4 +33,20 @@ def validar_dados_carro(modelo=None, ano=None, cor=None):
             raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
     
     return (modelo, ano, cor)
+    
+# Verifica o id
+def verificar_id_existe(id):
+    if type(id) is not int:
+        raise Exception("Erro: Id não pode estar vazio")
+    
+    conn = sqlite3.connect("carros.db")
+    cur = conn.cursor()
+
+    cur.execute('''SELECT id_carro FROM Carros WHERE id_carro = ?''', (id,))
+    resultado = cur.fetchone()
+
+    conn.close()
+
+    if not resultado:
+        raise Exception("Erro: Id não encontrado")
     
