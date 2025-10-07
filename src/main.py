@@ -1,5 +1,5 @@
 from database import *
-from utils import pausar
+from utils import pausar, limpar_terminal
 from tabulate import tabulate
 
 # Mostra tabela

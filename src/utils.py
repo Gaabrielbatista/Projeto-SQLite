@@ -14,12 +14,20 @@ def pausar():
 # Valida os dados do carro
 def validar_dados_carro(modelo=None, ano=None, cor=None):
     # Verificação str e int
+    
+    # modelo
     if modelo is not None:
         if not isinstance(modelo, str):
             raise Exception("Erro: Modelo deve ser do tipo string.")
+        
+    # ano
     if ano is not None:
         if type(ano) is not int:
             raise Exception("Erro: Ano deve ser do tipo int.")
+        if (1900 > ano or ano > 2030):
+            raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
+        
+    # cor
     if cor is not None:
         if not isinstance(cor, str):
             raise Exception("Erro: Cor deve ser do tipo string.")
@@ -27,10 +35,6 @@ def validar_dados_carro(modelo=None, ano=None, cor=None):
     # Validações
     modelo = (modelo.strip().capitalize() if type(modelo) == str else None)
     cor = (cor.strip().capitalize() if type(cor) == str else None)
-
-    if ano is not None:
-        if (1900 > ano or ano > 2030):
-            raise Exception("Erro: O ano precisa estar entre 1900 e 2030.")
     
     return (modelo, ano, cor)
     

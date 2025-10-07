@@ -36,7 +36,7 @@ def inserir_carro(modelo, ano, cor=None):
     # Validação
     dados_carro = validar_dados_carro(modelo, ano, cor)
 
-    if not modelo:
+    if not dados_carro[0]:
         raise Exception("Erro: Modelo não pode estar vazio.")
     
     # Inserção
