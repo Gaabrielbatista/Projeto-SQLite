@@ -15,9 +15,9 @@
 - [x] READ: Listar carros com visualização tabular
 - [x] UPDATE: Atualizar dados dos carros
 - [x] DELETE: Remover carros
+- [x] Validação de entrada de dados
       
 ### 🔄 Em Desenvolvimento:
-- [ ] Validação de entrada de dados
 - [ ] Interface de menu interativo
 
 ### 🔮 Próximas Features:
