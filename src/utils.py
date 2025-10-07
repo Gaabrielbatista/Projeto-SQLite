@@ -1,5 +1,6 @@
 import os
 import sqlite3
+
 # Funções para main
 
 def limpar_terminal():
@@ -14,7 +15,7 @@ def pausar():
 # Valida os dados do carro
 def validar_dados_carro(modelo=None, ano=None, cor=None):
     # Verificação str e int
-    
+
     # modelo
     if modelo is not None:
         if not isinstance(modelo, str):
