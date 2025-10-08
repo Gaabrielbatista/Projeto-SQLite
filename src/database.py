@@ -68,11 +68,17 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
     conn = criar_conexao()
     cur = conn.cursor()
 
-    if modelo_carro is not None:
+    if isinstance(modelo_carro, str) and modelo_carro.strip() == "":
+        raise Exception("Erro: Modelo se encontra vazio")
+    if modelo_carro is not None and (not isinstance(modelo_carro, str) or modelo_carro.strip() != ""):
         cur.execute("UPDATE Carros SET modelo = ? WHERE id_carro = ?", (modelo_carro, id))
+
     if ano_carro is not None:
         cur.execute("UPDATE Carros SET ano = ? WHERE id_carro = ?", (ano_carro, id))
-    if cor_carro is not None:
+
+    if isinstance(cor_carro, str) and cor_carro.strip() == "":
+        raise Exception("Erro: Cor se encontra vazio")
+    if cor_carro is not None is not None and (not isinstance(modelo_carro, str) or modelo_carro.strip() != ""):
         cur.execute("UPDATE Carros SET cor = ? WHERE id_carro = ?", (cor_carro, id))
 
     conn.commit()
