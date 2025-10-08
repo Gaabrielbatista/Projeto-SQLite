@@ -29,16 +29,14 @@ def interface_menu():
         match escolha:
             # === OPÇÃO 1 - INSERIR ===
             case 1:
-                print("Inserir novo carro\n")
-
+                print("\n[1] Inserir novo carro\n")
 
                 try:
                     modelo = input("Digite o modelo do carro: ")
                     ano = int(input("\nDigite o ano do carro: "))
                     cor = input("\nDigite a cor do carro (não é obrigatório): ")
                     inserir_carro(modelo, ano, cor)
-
-                    print("\nCarro adicionado com sucesso!")
+                    
                     pausar()
 
                 except ValueError:
@@ -50,7 +48,7 @@ def interface_menu():
 
             case 2:
                 # === OPÇÃO 2 - ATUALIZAR ===
-                print("\nAtualizar carro existente\n")
+                print("\n[2] Atualizar carro existente\n")
                 exibir_dados()
 
                 try:
@@ -89,7 +87,6 @@ def interface_menu():
                         pausar()
                         continue
 
-                    print("Atualização feita com sucesso!")
                     pausar()
 
                 except ValueError:
@@ -102,12 +99,34 @@ def interface_menu():
 
             case 3:
                 # === OPÇÃO 3 - DELETAR ===
-                print("\nDeletar carro\n")
+                print("\n[3] Deletar carro\n")
+                exibir_dados()
+
+                try:
+                    id_carro = int(input("ID do carro a deletar: ").strip())
+                    deletar_carro(id_carro)
+                    pausar()
+
+                except ValueError:
+                    print("Erro: Digite apenas números, tente novamente.")
+                    pausar()
+                except Exception as e:
+                    print(e)
+                    pausar()
 
             case 4:
-                print("\nListar carros\n")
+                # === OPÇÃO 4 - LISTAR ===
+                print("\n[4] Listar carros\n")
 
                 exibir_dados()
+                pausar()
+            case 5:
+                # === OPÇÃO 5 - SAIR ===
+                print("\n[5] Sair do programa\n")
+                print("Programa encerrado.\n")
+                break
+            case _:
+                print("Escolha inválida.")
                 pausar()
 
 
