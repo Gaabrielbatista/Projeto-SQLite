@@ -78,7 +78,7 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
 
     if isinstance(cor_carro, str) and cor_carro.strip() == "":
         raise Exception("Erro: Cor se encontra vazio")
-    if cor_carro is not None is not None and (not isinstance(modelo_carro, str) or modelo_carro.strip() != ""):
+    if cor_carro is not None and (not isinstance(modelo_carro, str) or modelo_carro.strip() != ""):
         cur.execute("UPDATE Carros SET cor = ? WHERE id_carro = ?", (cor_carro, id))
 
     conn.commit()
