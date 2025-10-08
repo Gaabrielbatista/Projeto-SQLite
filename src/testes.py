@@ -1,5 +1,4 @@
 from database import *
-from utils import pausar
 from tabulate import tabulate
 
 # Mostra tabela
