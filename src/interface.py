@@ -130,7 +130,4 @@ def interface_menu():
             case _:
                 print("Escolha inválida.")
                 pausar()
-
-
-
-interface_menu()
+                
