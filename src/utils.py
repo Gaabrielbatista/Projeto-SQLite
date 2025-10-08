@@ -8,7 +8,7 @@ def limpar_terminal():
 
 # Pausa para visualização
 def pausar():
-    input("\nPressione Enter para continuar...\n ")
+    input("\nPressione Enter para continuar...")
 
 # Funções para database
 
