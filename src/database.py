@@ -45,6 +45,7 @@ def inserir_carro(modelo, ano, cor=None):
 
     cur.execute("INSERT INTO Carros (modelo, ano, cor) VALUES (?, ?, ?)", dados_carro)
 
+    print("Carro criado!")
     conn.commit()
     conn.close()
 
@@ -81,6 +82,8 @@ def atualizar_carro(id, modelo=None, ano=None, cor=None):
     if cor_carro is not None and (not isinstance(modelo_carro, str) or modelo_carro.strip() != ""):
         cur.execute("UPDATE Carros SET cor = ? WHERE id_carro = ?", (cor_carro, id))
 
+    print(f"Carro no ID: {id} atualizado!")
+
     conn.commit()
     conn.close()
 
@@ -93,7 +96,7 @@ def deletar_carro(id):
 
     cur.execute("DELETE FROM Carros WHERE id_carro = ?", (id, ))
 
-    print(f"Carro no id: {id} deletado.")
+    print(f"Carro no ID: {id} deletado!")
 
     conn.commit()
     conn.close()
