@@ -45,7 +45,7 @@ def interface_menu():
                 except Exception as e:
                     print(e)
                     pausar()
-
+                    
             case 2:
                 # === OPÇÃO 2 - ATUALIZAR ===
                 print("\n[2] Atualizar carro existente\n")
@@ -96,7 +96,7 @@ def interface_menu():
                 except Exception as e:
                     print(e)
                     pausar()
-
+                    
             case 3:
                 # === OPÇÃO 3 - DELETAR ===
                 print("\n[3] Deletar carro\n")
@@ -113,18 +113,20 @@ def interface_menu():
                 except Exception as e:
                     print(e)
                     pausar()
-
+                    
             case 4:
                 # === OPÇÃO 4 - LISTAR ===
                 print("\n[4] Listar carros\n")
 
                 exibir_dados()
                 pausar()
+                
             case 5:
                 # === OPÇÃO 5 - SAIR ===
                 print("\n[5] Sair do programa\n")
                 print("Programa encerrado.\n")
                 break
+                
             case _:
                 print("Escolha inválida.")
                 pausar()
