@@ -89,7 +89,7 @@ def interface_menu():
                         pausar()
                         continue
 
-                    print("Aquisição feita com sucesso!")
+                    print("Atualização feita com sucesso!")
                     pausar()
 
                 except ValueError:
