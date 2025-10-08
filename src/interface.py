@@ -35,7 +35,7 @@ def interface_menu():
                 try:
                     modelo = input("Digite o modelo do carro: ")
                     ano = int(input("\nDigite o ano do carro: "))
-                    cor = input("\nDigite a cor do carro: ")
+                    cor = input("\nDigite a cor do carro (não é obrigatório): ")
                     inserir_carro(modelo, ano, cor)
 
                     print("\nCarro adicionado com sucesso!")
