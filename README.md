@@ -16,9 +16,9 @@
 - [x] UPDATE: Atualizar dados dos carros
 - [x] DELETE: Remover carros
 - [x] Validação de entrada de dados
+- [x] Interface de menu interativo
       
 ### 🔄 Em Desenvolvimento:
-- [ ] Interface de menu interativo
 
 ### 🔮 Próximas Features:
 - [ ] Busca por filtros específicos
