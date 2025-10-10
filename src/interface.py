@@ -14,7 +14,7 @@ def interface_menu():
     while True:
         limpar_terminal()
 
-        print("====== BANCO DE DADOS ======\n")
+        print("====== GESTÃO DE CARROS ======\n")
         print("[1] Inserir novo carro\n[2] Atualizar carro existente")
         print("[3] Deletar carro\n[4] Listar carros\n[5] Sair do programa")
 
