@@ -1,7 +1,7 @@
 import os
 import sqlite3
 
-# Funções para main
+# Funções para interface
 
 def limpar_terminal():
     os.system("cls" if os.name == "nt" else "clear")
