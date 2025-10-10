@@ -9,7 +9,7 @@ def exibir_dados():
 
 
 def interface_menu():
-    criar_tabela()  #tirar
+    criar_tabela()
 
     while True:
         limpar_terminal()
