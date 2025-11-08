@@ -19,7 +19,7 @@
 - [x] Interface de menu interativo
       
 ### 🔄 Em Desenvolvimento:
-- [ ] Busca por filtros específicos
+- [x] Busca por filtros específicos
       
 ### 🔮 Próximas Features:
 - [ ] Relatórios e estatísticas
