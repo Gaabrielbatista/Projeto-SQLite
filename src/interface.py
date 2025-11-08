@@ -3,8 +3,8 @@ from database import *
 from tabulate import tabulate
 
 # Mostra tabela
-def exibir_dados():
-    exibição = (tabulate(listar_carros(), tablefmt='fancy_grid', headers=['ID', 'Modelo', 'Ano', 'Cor']))
+def exibir_dados(ano_filtro=0):
+    exibição = (tabulate(listar_carros(ano=ano_filtro), tablefmt='fancy_grid', headers=['ID', 'Modelo', 'Ano', 'Cor']))
     print(exibição)
 
 
@@ -106,7 +106,6 @@ def interface_menu():
                     id_carro = int(input("ID do carro a deletar: ").strip())
                     deletar_carro(id_carro)
                     pausar()
-
                 except ValueError:
                     print("Erro: Digite apenas números, tente novamente.")
                     pausar()
@@ -117,9 +116,28 @@ def interface_menu():
             case 4:
                 # === OPÇÃO 4 - LISTAR ===
                 print("\n[4] Listar carros\n")
+                
+                try:
+                    listar_por_ano = input("Filtrar por ano específico? (maior/menor/n): ").strip().lower()
 
-                exibir_dados()
-                pausar()
+                    if listar_por_ano == "maior":
+                        ano_especifico = int(input("Filtrar por ano maior igual a: ").strip())
+                        exibir_dados(ano_filtro=ano_especifico)
+
+                        pausar()
+                        continue
+                    elif listar_por_ano == "menor":
+                        ano_especifico = int(input("Filtrar por ano menor igual a: ").strip())
+                        exibir_dados(ano_filtro=-ano_especifico)
+
+                        pausar()
+                        continue
+                    else:
+                        exibir_dados()
+                        pausar()
+                except ValueError:
+                    print("Erro: Digite apenas números.")
+                    pausar()
                 
             case 5:
                 # === OPÇÃO 5 - SAIR ===
