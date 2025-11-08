@@ -19,8 +19,8 @@
 - [x] Interface de menu interativo
       
 ### 🔄 Em Desenvolvimento:
-
-### 🔮 Próximas Features:
 - [ ] Busca por filtros específicos
+      
+### 🔮 Próximas Features:
 - [ ] Relatórios e estatísticas
 - [ ] Export para CSV
