@@ -118,15 +118,15 @@ def interface_menu():
                 print("\n[4] Listar carros\n")
                 
                 try:
-                    listar_por_ano = input("Filtrar por ano específico? (maior/menor/n): ").strip().lower()
+                    filtrar_por_ano = input("Filtrar por ano específico? (maior/menor/n): ").strip().lower()
 
-                    if listar_por_ano == "maior":
+                    if filtrar_por_ano == "maior":
                         ano_especifico = int(input("Filtrar por ano maior igual a: ").strip())
                         exibir_dados(ano_filtro=ano_especifico)
 
                         pausar()
                         continue
-                    elif listar_por_ano == "menor":
+                    elif filtrar_por_ano == "menor":
                         ano_especifico = int(input("Filtrar por ano menor igual a: ").strip())
                         exibir_dados(ano_filtro=-ano_especifico)
 
