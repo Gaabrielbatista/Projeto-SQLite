@@ -17,10 +17,10 @@
 - [x] DELETE: Remover carros
 - [x] Validação de entrada de dados
 - [x] Interface de menu interativo
-      
-### 🔄 Em Desenvolvimento:
 - [x] Busca por filtros específicos
       
-### 🔮 Próximas Features:
+### 🔄 Em Desenvolvimento:
 - [ ] Relatórios e estatísticas
+
+### 🔮 Próximas Features:
 - [ ] Export para CSV
