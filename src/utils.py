@@ -55,3 +55,10 @@ def verificar_id_existe(id):
     if not resultado:
         raise Exception("Erro: Id não encontrado")
     
+
+# Filtro do ano
+def filtrar_ano(ano):
+    if (1900 > ano or ano > 2030):
+        raise Exception("Erro: A filtragem do ano precisa estar entre 1900 e 2030.")
+    
+    return ano
