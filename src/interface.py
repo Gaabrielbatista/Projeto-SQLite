@@ -1,4 +1,4 @@
-from utils import limpar_terminal, pausar
+from utils import limpar_terminal, pausar, filtrar_ano
 from database import *
 from tabulate import tabulate
 
@@ -21,7 +21,7 @@ def interface_menu():
         try:
             escolha = int(input("O que deseja fazer? "))
         except ValueError:
-            print("Erro: Digite apenas números, tente novamente.")
+            print("Erro: Digite apenas números inteiros, tente novamente.")
 
             pausar()
             continue
@@ -40,7 +40,7 @@ def interface_menu():
                     pausar()
 
                 except ValueError:
-                    print("Erro: Para o ano digite apenas números, tente novamente.")
+                    print("Erro: Para o ano digite apenas números inteiros, tente novamente.")
                     pausar()
                 except Exception as e:
                     print(e)
@@ -90,7 +90,7 @@ def interface_menu():
                     pausar()
 
                 except ValueError:
-                    print("Erro: Digite apenas números.")
+                    print("Erro: Digite apenas números inteiros.")
                     pausar()
 
                 except Exception as e:
@@ -107,7 +107,7 @@ def interface_menu():
                     deletar_carro(id_carro)
                     pausar()
                 except ValueError:
-                    print("Erro: Digite apenas números, tente novamente.")
+                    print("Erro: Digite apenas números inteiros, tente novamente.")
                     pausar()
                 except Exception as e:
                     print(e)
@@ -122,13 +122,13 @@ def interface_menu():
 
                     if filtrar_por_ano == "maior":
                         ano_especifico = int(input("Filtrar por ano maior igual a: ").strip())
-                        exibir_dados(ano_filtro=ano_especifico)
+                        exibir_dados(ano_filtro=filtrar_ano(ano_especifico))
 
                         pausar()
                         continue
                     elif filtrar_por_ano == "menor":
                         ano_especifico = int(input("Filtrar por ano menor igual a: ").strip())
-                        exibir_dados(ano_filtro=-ano_especifico)
+                        exibir_dados(ano_filtro=-filtrar_ano(ano_especifico))
 
                         pausar()
                         continue
@@ -136,7 +136,10 @@ def interface_menu():
                         exibir_dados()
                         pausar()
                 except ValueError:
-                    print("Erro: Digite apenas números.")
+                    print("Erro: Digite apenas números inteiros.")
+                    pausar()
+                except Exception as e:
+                    print(e)
                     pausar()
                 
             case 5:
