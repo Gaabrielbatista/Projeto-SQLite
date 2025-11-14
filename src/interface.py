@@ -1,11 +1,16 @@
 from utils import limpar_terminal, pausar, filtrar_ano
-from database import *
+from database import criar_tabela, inserir_carro, listar_carros, atualizar_carro, deletar_carro
 from tabulate import tabulate
 
 # Mostra tabela
 def exibir_dados(ano_filtro=0):
-    exibição = (tabulate(listar_carros(ano=ano_filtro), tablefmt='fancy_grid', headers=['ID', 'Modelo', 'Ano', 'Cor']))
-    print(exibição)
+    listar_carros_result = listar_carros(ano_filtro)
+
+    if listar_carros_result:
+        exibição = (tabulate(listar_carros_result, tablefmt='fancy_grid', headers=['ID', 'Modelo', 'Ano', 'Cor']))
+        print(exibição)
+    else:
+        print("\nNenhum carro encontrado para o filtro aplicado.")
 
 
 def interface_menu():
