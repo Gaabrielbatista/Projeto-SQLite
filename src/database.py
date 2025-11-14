@@ -50,14 +50,14 @@ def inserir_carro(modelo, ano, cor=None):
     conn.close()
 
 # READ
-def listar_carros(ano=0):
+def listar_carros(ano_filtro=0):
     conn = criar_conexao()
     cur = conn.cursor()
 
-    if ano > 0:
-        cur.execute("SELECT * FROM Carros WHERE ano >= ?", (ano,))
-    elif ano < 0:
-        cur.execute("SELECT * FROM Carros WHERE ano <= ?", (abs(ano),))
+    if ano_filtro > 0:
+        cur.execute("SELECT * FROM Carros WHERE ano >= ?", (ano_filtro,))
+    elif ano_filtro < 0:
+        cur.execute("SELECT * FROM Carros WHERE ano <= ?", (abs(ano_filtro),))
     else:
         cur.execute("SELECT * FROM Carros")
 
