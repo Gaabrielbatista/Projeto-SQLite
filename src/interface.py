@@ -152,9 +152,10 @@ def interface_menu():
                 # === OPÇÃO 5 - EXPORTAR CSV ===
                 print("\n[5] Exportar para CSV\n")
                 exportar_csv()
-                
+
                 print("Exportação concluída com sucesso.")
                 pausar()
+    
             case 6:
                 # === OPÇÃO 6 - SAIR ===
                 print("\n[6] Sair do programa\n")
