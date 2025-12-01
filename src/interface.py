@@ -1,6 +1,7 @@
 from utils import limpar_terminal, pausar, filtrar_ano
 from database import criar_tabela, inserir_carro, listar_carros, atualizar_carro, deletar_carro
 from tabulate import tabulate
+from export import exportar_csv
 
 # Mostra tabela
 def exibir_dados(ano_filtro=0):
@@ -21,7 +22,7 @@ def interface_menu():
 
         print("====== GESTÃO DE CARROS ======\n")
         print("[1] Inserir novo carro\n[2] Atualizar carro existente")
-        print("[3] Deletar carro\n[4] Listar carros\n[5] Sair do programa")
+        print("[3] Deletar carro\n[4] Listar carros\n[5] Exportar para CSV\n[6] Sair do programa")
 
         try:
             escolha = int(input("O que deseja fazer? "))
@@ -146,10 +147,17 @@ def interface_menu():
                 except Exception as e:
                     print(e)
                     pausar()
-                
+
             case 5:
-                # === OPÇÃO 5 - SAIR ===
-                print("\n[5] Sair do programa\n")
+                # === OPÇÃO 5 - EXPORTAR CSV ===
+                print("\n[5] Exportar para CSV\n")
+                exportar_csv()
+                
+                print("Exportação concluída com sucesso.")
+                pausar()
+            case 6:
+                # === OPÇÃO 6 - SAIR ===
+                print("\n[6] Sair do programa\n")
                 print("Programa encerrado.\n")
                 break
                 
