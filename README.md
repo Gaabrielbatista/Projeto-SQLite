@@ -18,8 +18,4 @@
 - [x] Validação de entrada de dados
 - [x] Interface de menu interativo
 - [x] Busca por filtros específicos
-      
-### 🔄 Em Desenvolvimento:
-- [ ] Export para CSV
-
-
+- [x] Export para CSV
