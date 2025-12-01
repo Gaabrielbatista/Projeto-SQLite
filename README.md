@@ -20,7 +20,6 @@
 - [x] Busca por filtros específicos
       
 ### 🔄 Em Desenvolvimento:
-- [ ] Relatórios e estatísticas
-
-### 🔮 Próximas Features:
 - [ ] Export para CSV
+
+
