@@ -44,6 +44,3 @@ config.local.py
 # Arquivos de teste
 test_*.py
 *_test.py
-
-# Exported CSV files
-export_carros_*.csv
