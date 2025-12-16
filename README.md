@@ -1,12 +1,10 @@
-# Aprendendo Banco de Dados com Python e SQLite
+# Banco de Dados com Python e SQLite
 
-## O que estou aprendendo:
+## Conceitos abordados:
 - Conexões com banco de dados
 - Criação de tabelas com constraints
 - Operações CRUD básicas
 - Boas práticas com SQLite
-
-## 📋 Status do Projeto
 
 ### ✅ Implementado:
 - [x] Conexão com banco SQLite
